@@ -2,8 +2,10 @@ package multythredingcurs;
 
 public class ThreadCreation {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		MyThread1 myThread1 = new MyThread1();
+		myThread1.setName("Первый поток 1");
+		myThread1.setPriority(Thread.MAX_PRIORITY);
 		Thread mythread2 = new Thread(new Mythread2());
 
 		new Thread(new Runnable() {
@@ -23,6 +25,9 @@ public class ThreadCreation {
 
 		myThread1.start();
 		mythread2.start();
+		myThread1.join();
+		mythread2.join();
+		System.out.println("Конец выполнения программы");
 	}
 }
 
@@ -30,6 +35,11 @@ class Mythread2 implements Runnable {
 	@Override
 	public void run() {
 		for (int i = 10; i > 0; i--) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			System.out.println(Thread.currentThread().getName() + " " + i);
 		}
 	}
