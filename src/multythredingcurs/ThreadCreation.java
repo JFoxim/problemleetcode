@@ -4,7 +4,7 @@ public class ThreadCreation {
 
 	public static void main(String[] args) throws InterruptedException {
 		MyThread1 myThread1 = new MyThread1();
-		myThread1.setName("Первый поток 1");
+		myThread1.setName("myThread1");
 		myThread1.setPriority(Thread.MAX_PRIORITY);
 		Thread mythread2 = new Thread(new Mythread2());
 
@@ -27,7 +27,7 @@ public class ThreadCreation {
 		mythread2.start();
 		myThread1.join();
 		mythread2.join();
-		System.out.println("Конец выполнения программы");
+		System.out.println("Р—Р°РІРµСЂС€РµРЅРёРµ СЂР°Р±РѕС‚С‹");
 	}
 }
 

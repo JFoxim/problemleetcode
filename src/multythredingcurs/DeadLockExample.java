@@ -14,12 +14,12 @@ public class DeadLockExample {
 
 class Thread10 extends Thread{	
 	public void run(){
-		System.out.println("Thread10: попытка захватить монитор lock 1");
+		System.out.println("Thread10: РїС‹С‚Р°РµС‚СЃСЏ Р·Р°С…РІР°С‚РёС‚СЊ lock 1");
 		synchronized (DeadLockExample.lock1) {
-			System.out.println("Thread10: монитор lock 1 хахвачен");
-			System.out.println("Thread10: попытка захватить монитор lock 2");
+			System.out.println("Thread10: Р·Р°С…РІР°С‚РёР» lock 1 ");
+			System.out.println("Thread10: РїС‹С‚Р°РµС‚СЃСЏ Р·Р°С…РІР°С‚РёС‚СЊ lock 2");
 			synchronized (DeadLockExample.lock2) {
-				System.out.println("Thread10: мониторы lock 1 и lock 2 хахвачен");
+				System.out.println("Thread10: lock 1 Рё lock 2 Р·Р°С…РІР°С‡РµРЅС‹");
 			}			
 		}		
 	}
@@ -27,12 +27,12 @@ class Thread10 extends Thread{
 
 class Thread20 extends Thread{	
 	public void run(){
-		System.out.println("Thread20: попытка захватить монитор lock 2");
+		System.out.println("Thread20: РїС‹С‚Р°РµС‚СЃСЏ Р·Р°С…РІР°С‚РёС‚СЊ lock 2");
 		synchronized (DeadLockExample.lock2) {
-			System.out.println("Thread20: монитор lock 2 хахвачен");
-			System.out.println("Thread20: попытка захватить монитор lock 1");
+			System.out.println("Thread20: Р·Р°С…РІР°С‡РµРЅ lock 2");
+			System.out.println("Thread20: РїС‹С‚Р°РµС‚СЃСЏ Р·Р°С…РІР°С‚РёС‚СЊ lock 1");
 			synchronized (DeadLockExample.lock1) {
-				System.out.println("Thread20: мониторы lock 1 и lock 2 хахвачен");
+				System.out.println("Thread20: lock 1 Рё lock 2 Р·Р°С…РІР°С‡РµРЅС‹");
 			}			
 		}		
 	}

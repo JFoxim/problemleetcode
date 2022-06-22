@@ -20,7 +20,7 @@ class InterruptedThread extends Thread {
 	public void run() {
 		for (int i = 1; i < 1000000000; i++) {
 			if (isInterrupted()) {
-				System.out.println("Поток хотят прервать");
+				System.out.println("РџРѕС‚РѕРє РїСЂРµСЂРІР°РЅ");
 				return;
 			}
 			sqrtSum += Math.sqrt(i);
